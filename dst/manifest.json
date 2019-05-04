@@ -1,0 +1,36 @@
+{
+  "name": "Getting Started Example",
+  "version": "1.0",
+  "description": "Build an Extension!",
+  "permissions": ["storage", "activeTab", "http://*/*", "https://*/*"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://scinapse.io/*",
+        "https://dev.scinapse.io/*",
+        "http://localhost:3000/*"
+      ],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/scinapse-16.png",
+      "32": "images/scinapse-32.png",
+      "48": "images/scinapse-48.png",
+      "128": "images/scinapse-128.png"
+    }
+  },
+  "icons": {
+    "16": "images/scinapse-16.png",
+    "32": "images/scinapse-32.png",
+    "48": "images/scinapse-48.png",
+    "128": "images/scinapse-128.png"
+  },
+  "manifest_version": 2
+}
