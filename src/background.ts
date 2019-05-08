@@ -1,5 +1,13 @@
 chrome.runtime.onInstalled.addListener(function() {
-  chrome.storage.sync.set({ color: "#3aa757" }, function() {
-    console.log("The color is green.");
+  console.log("chrome extension is installed");
+  chrome.runtime.onMessageExternal.addListener(function(
+    request,
+    _sender,
+    sendResponse
+  ) {
+    if (request && request.message === "CHECK_EXTENSION_EXIST") {
+      sendResponse({ success: true });
+    }
+    return true;
   });
 });

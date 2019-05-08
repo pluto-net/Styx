@@ -32,6 +32,6 @@ module.exports = {
       allowAsyncCycles: false,
       cwd: process.cwd()
     }),
-    new CopyPlugin(["src/popup.html", "assets"])
+    new CopyPlugin(["src/popup.html", "assets", "src/manifest.json"])
   ]
 };
